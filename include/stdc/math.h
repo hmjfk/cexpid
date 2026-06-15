@@ -1,5 +1,5 @@
 /*
-    cexpid - C言語の言語機能強化部品集
+    cexpid - POSIX指向のC言語汎用部品集
     Copyright (C) 2025 - Denkousi
 
     This program is free software: you can redistribute it and/or modify
