@@ -15,3 +15,13 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
+#if !defined(EXTSTDATOMIC_H)
+#define EXTSTDATOMIC_H
+/**
+Summary:
+  Check the state without changing atomic_flag.
+returns:
+  Same as atomic_flag_test_and_set.
+*/
+bool atmftst(volatile atomic_flag* flag);
+#endif // end EXTSTDATOMIC_H
