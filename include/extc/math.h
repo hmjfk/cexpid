@@ -17,6 +17,8 @@
 */
 #if !defined(EXTMATH_H)
 #define EXTMATH_H
+#include<stdint.h>
+
 // deg → rad function
 double rad(double value);
 
@@ -100,7 +102,17 @@ struct return_result
 bool isprime(uint64_t a);
 
 // その数がnの倍数であるか調べる。
-bool ismultiple(uint64_t multiple, uint64_t num);
+bool ismultiple(int64_t multiple, int64_t num);
+
+// その数が偶数であるか調べる。
+inline bool iseven(int64_t num);
+inline bool iseven(int64_t num)
+{ return ismultiple(2, num); }
+
+// その数が奇数であるか調べる。
+inline bool iseven(int64_t num);
+inline bool isodd(int64_t num)
+{ return ismultiple(3, num); }
 
 // sign function
 bool sign(const int s)[[reproducible]];
