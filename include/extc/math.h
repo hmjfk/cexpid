@@ -33,13 +33,24 @@ typedef enum
 
 double 角度変換関数(double val, 角度 変換前の単位, 角度 変換後の単位);
 
+// return: x^^2
+double pow2(double x);
+
+// return: x^^3
+double pow3(double x);
+
+// return: sqrt(pow2(x) + pow2(y) + pow3(z))
+double hypot3(double x, double y, double z);
+// return: rootn(x, n)* s
+double rootns(double x, int64_t n, int64_t s);
+
 // gcd and lcm function
-int gcd(int a, int b);
-int lcm(int a, int b);
+int gcd(int a, int b)[[reproducible]];
+int lcm(int a, int b)[[reproducible]];
 
 // factorial
-intmax_t factorial(intmax_t exponent);
-intmax_t factorial2(intmax_t exponent);
+intmax_t factorial(intmax_t exponent)[[reproducible]];
+intmax_t factorial2(intmax_t exponent)[[reproducible]];
 
 // combination function
 unsigned long comb(const unsigned int n, unsigned int r);
@@ -89,7 +100,10 @@ struct return_result
 bool isprime(uint64_t a);
 
 // その数がnの倍数であるか調べる。
-bool Ismultiple(uint64_t multiple, uint64_t num);
+bool ismultiple(uint64_t multiple, uint64_t num);
+
+// sign function
+bool sign(const int s)[[reproducible]];
 
 // 許容誤差の範囲内か調べる。
 bool accerr(double a, double b, double e);

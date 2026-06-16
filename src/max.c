@@ -15,7 +15,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
-int max(int a, int b)
+int max(int a, int b)[[reproducible]]
 {
     return a > b ? a : b;
 }
