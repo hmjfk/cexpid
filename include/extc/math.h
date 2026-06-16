@@ -42,7 +42,7 @@ intmax_t factorial(intmax_t exponent);
 intmax_t factorial2(intmax_t exponent);
 
 // combination function
-unsigned long comb(unsigned int n, unsigned int r);
+unsigned long comb(const unsigned int n, unsigned int r);
 
 // permutation function
 unsigned long perm(unsigned int n, unsigned int r);

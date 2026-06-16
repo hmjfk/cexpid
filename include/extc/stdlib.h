@@ -84,6 +84,9 @@ int min(int a, int b);
 // sign function
 bool sign(int s);
 
+// swap function
+void swap(int* a, int* b);
+
 // strtoi function
 // strtolの戻り値をint型にした関数
 int strtoi(const char * restrict nptr, char ** restrict endptr, int base);
