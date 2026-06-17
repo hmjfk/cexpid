@@ -110,9 +110,9 @@ inline bool iseven(int64_t num)
 { return ismultiple(2, num); }
 
 // その数が奇数であるか調べる。
-inline bool iseven(int64_t num);
+inline bool isodd(int64_t num);
 inline bool isodd(int64_t num)
-{ return ismultiple(3, num); }
+{ return !iseven(num); }
 
 // sign function
 bool sign(const int s)[[reproducible]];
