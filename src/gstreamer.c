@@ -18,14 +18,7 @@
 
 extern void gst_init(int* argc, char*** argv);
 
-// Gstreamerの初期化関数を引数なしで呼べるようにする。
 void gst_init_noarg()
 {
     gst_init((int*){ &(int){} }, &(char**){ &(char*){} });
-}
-
-// "http://"もしくは"file://"から音声を再生する。 Gstreamerを使用。
-void audio_mini_play(char* url)
-{
-    
 }
