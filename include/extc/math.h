@@ -26,14 +26,9 @@ double rad(double value);
 double deg(double value);
 
 // 角度変換関数
-typedef enum 
-{
-    Deg,
-    Rad,
-    Grd
-} 角度;
+typedef enum { Deg, Rad, Grd } angle;
 
-double 角度変換関数(double val, 角度 変換前の単位, 角度 変換後の単位);
+double angleconv(double v, angle before, angle after);
 
 // return: x^^2
 double pow2(double x);
@@ -43,12 +38,12 @@ double pow3(double x);
 
 // return: sqrt(pow2(x) + pow2(y) + pow3(z))
 double hypot3(double x, double y, double z);
-// return: rootn(x, n)* s
-double rootns(double x, int64_t n, int64_t s);
+// return: rootn(x, n) * m
+double rootnm(double x, uint64_t n, int64_t m);
 
 // gcd and lcm function
 int gcd(int a, int b)[[reproducible]];
-int lcm(int a, int b)[[reproducible]];
+int lcm(int a, int b);
 
 // factorial
 intmax_t factorial(intmax_t exponent)[[reproducible]];
@@ -68,7 +63,7 @@ double midpoint(double a, double b);
 void* pmidpoint(void* a, void* b);
 
 // Numeric radix conversion function
-int numbase(int a, int conv);
+int radix(int a, int conv);
 
 // inf function (go言語と同じ仕様)
 double inf(double value);

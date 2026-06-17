@@ -15,3 +15,26 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
+// Original License:
+//===----------------------------------------------------------------------===//
+//
+// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.
+// See https://llvm.org/LICENSE.txt for license information.
+// SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
+//
+//===----------------------------------------------------------------------===//
+/// source https://raw.githubusercontent.com/llvm/llvm-project/refs/heads/main/libcxx/include/__numeric/gcd_lcm.h
+
+#include <stdlib.h>
+#include <stdckdint.h>
+#include <assert.h>
+extern int gcd(int x, int y);
+
+int lcm(int m, int n)
+{
+    if (m == 0 || n == 0) return 0;
+    
+    int res = {};
+    assert(!ckd_mul(&res, abs(m) / gcd(m, n), abs(n)));
+    return res;
+}
