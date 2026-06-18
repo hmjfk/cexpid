@@ -23,5 +23,5 @@ Summary:
 returns:
   Same as atomic_flag_test_and_set.
 */
-bool atmftst(volatile atomic_flag* flag);
+bool atmftest(volatile atomic_flag* flag);
 #endif // end EXTSTDATOMIC_H

@@ -17,8 +17,7 @@
 */
 
 // Gstreamerの初期化関数を引数なしで呼べるようにする。
-void gst_init_noarg();
+void gst_qinit();
 
 // "http://"もしくは"file://"から音声を再生する。 Gstreamerを使用。
-void audio_mini_play(char* url);
-
+void miniplay_a(char* url);

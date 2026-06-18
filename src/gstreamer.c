@@ -18,7 +18,7 @@
 
 extern void gst_init(int* argc, char*** argv);
 
-void gst_init_noarg()
+void gst_qinit()
 {
     gst_init((int*){ &(int){} }, &(char**){ &(char*){} });
 }
