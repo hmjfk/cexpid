@@ -1,0 +1,16 @@
+# General
+BasedOnStyle: GNU
+UseTab: Never
+IndentWidth: 4
+ColumnLimit: 240
+
+# Coding Style
+SortIncludes: Never
+PointerAlignment: Left
+SeparateDefinitionBlocks: Always
+SpaceAfterCStyleCast: false
+SpaceAfterLogicalNot: false
+SpaceAfterOperatorKeyword: false
+SpaceBeforeParens: ControlStatements
+BreakAfterReturnType: Automatic
+BreakAfterAttributes: Leave
