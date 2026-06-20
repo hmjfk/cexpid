@@ -58,16 +58,16 @@ unsigned long perm(unsigned int n, unsigned int r);
 // nested combination function
 int ncomb(unsigned int n, unsigned int r);
 
-// midpoint finction (C Version)
+// midpoint finction (from C++ std::midpoint)
 double midpoint(double a, double b);
 
 // Numeric radix conversion function
 int radix(int a, int conv);
 
-// inf function (go言語と同じ仕様)
+// inf function (from go)
 double inf(double value);
 
-// lerp function (C++を参考とした。)
+// lerp function (from C++ std::lerp)
 double lerp(const double a, const double b, const double t)[[unsequenced]];
 
 // sum total function
