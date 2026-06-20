@@ -1,0 +1,4 @@
+* text=lf
+
+*.c linguist-language=C
+*.h linguist-language=C
