@@ -15,7 +15,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
-int sign(const int s) [[reproducible]]
+int sign(const int s) [[unsequenced]]
 {
     if(s > 0)
         return 1;

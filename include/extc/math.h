@@ -109,7 +109,7 @@ inline bool isodd(int64_t num)
 { return !iseven(num); }
 
 // sign function
-bool sign(const int s)[[reproducible]];
+bool sign(const int s)[[unsequenced]];
 
 // 許容誤差の範囲内か調べる。
 bool accerr(double a, double b, double e);
