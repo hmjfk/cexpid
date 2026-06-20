@@ -15,6 +15,8 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
+// clang-format off
+
 #include<stdint.h>
 
 bool ismultiple(int64_t multiple, int64_t num)

@@ -20,13 +20,14 @@ original code is CC0
 https://github.com/okumuralab/algo-c
 */
 extern void swap(int* a, int* b);
+
 int gcd(int x, int y)
 {
-  int r = x % y;
-  while (y != 0)
-  {
-    r %= y;
-    swap(&r, &y);
-  }
-   return r;
+    int r = x % y;
+    while (y != 0)
+        {
+            r %= y;
+            swap(&r, &y);
+        }
+    return r;
 }

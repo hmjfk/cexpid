@@ -16,6 +16,7 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 #include <math.h>
+// clang-format off
 
 bool accerr(double a, double b, double e)
 {

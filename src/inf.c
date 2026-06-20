@@ -16,9 +16,10 @@
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
 #include <math.h>
-double inf (int n)
+
+double inf(int n)
 {
-    if(n > 0)
+    if (n > 0)
         return HUGE_VAL;
     else
         return -HUGE_VAL;

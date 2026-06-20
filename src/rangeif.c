@@ -17,42 +17,41 @@
 */
 #include "rangeif.h"
 
-int range_if(const int cmpval,unsigned int qty,const int* condi, const unsigned char cmpmode)
-[[reproducible]]
+int range_if(const int cmpval, unsigned int qty, const int* condi, const unsigned char cmpmode) [[reproducible]]
 {
-  switch(cmpmode)
-  {
-    // 以上
-    case more:
-        if(cmpval < condi[0])
+    switch (cmpmode)
         {
-            return -1;
-        }
-        while (cmpval < condi[--qty]){}
+        // 以上
+        case more:
+            if (cmpval < condi[0])
+                {
+                    return -1;
+                }
+            while (cmpval < condi[--qty]) {}
 
-        break;
-    // 以下
-    case under:
-        for(auto i = 0u; i < qty; i++)
-        {
-            if (cmpval <= condi[i])
-            {
-                qty = i;
-            }
+            break;
+        // 以下
+        case under:
+            for (auto i = 0u; i < qty; i++)
+                {
+                    if (cmpval <= condi[i])
+                        {
+                            qty = i;
+                        }
+                }
+            break;
+        // 未満
+        case less:
+            for (auto i = 0u; i < qty; i++)
+                {
+                    if (cmpval < condi[i])
+                        {
+                            qty = i;
+                        }
+                }
+            break;
+        default:
+            return -2;
         }
-    break;
-    // 未満
-    case less:
-        for(auto i = 0u; i < qty; i++)
-        {
-            if (cmpval < condi[i])
-            {
-                qty = i;
-            }
-        }
-        break;
-    default:
-        return -2;
-  }
-  return qty;
+    return qty;
 }

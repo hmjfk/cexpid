@@ -5,12 +5,17 @@ IndentWidth: 4
 ColumnLimit: 240
 
 # Coding Style
-SortIncludes: Never
-PointerAlignment: Left
+AllowShortLoopsOnASingleLine: true
+AllowShortBlocksOnASingleLine: Always
+AllowShortFunctionsOnASingleLine: Empty
+BreakAfterReturnType: Automatic
+BreakAfterAttributes: Leave
+
 SeparateDefinitionBlocks: Always
 SpaceAfterCStyleCast: false
 SpaceAfterLogicalNot: false
 SpaceAfterOperatorKeyword: false
 SpaceBeforeParens: ControlStatements
-BreakAfterReturnType: Automatic
-BreakAfterAttributes: Leave
+
+SortIncludes: Never
+PointerAlignment: Left

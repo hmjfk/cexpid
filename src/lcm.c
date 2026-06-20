@@ -32,8 +32,9 @@ extern int gcd(int x, int y);
 
 int lcm(int m, int n)
 {
-    if (m == 0 || n == 0) return 0;
-    
+    if (m == 0 || n == 0)
+        return 0;
+
     int res = {};
     assert(!ckd_mul(&res, abs(m) / gcd(m, n), abs(n)));
     return res;

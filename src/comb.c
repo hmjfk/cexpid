@@ -19,6 +19,8 @@
 original code is CC0
 https://github.com/okumuralab/algo-c
 */
+// clang-format off
+
 unsigned long comb(const unsigned int n, unsigned int r)
 {
     typeof(unsigned long[17]) a;

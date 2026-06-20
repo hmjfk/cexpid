@@ -20,16 +20,15 @@
 // Original Source: https://gcc.gnu.org/cgit/gcc/plain/libstdc++-v3/include/c_global/cmath
 #include <math.h>
 
-
 double hypot3(double x, double y, double z) [[reproducible]]
 {
     x = fabs(x);
     y = fabs(y);
     z = fabs(z);
 
-    if (const double a = x < y ? /* true */(y < z ? z : y ) : /* false */(x < z ? z : x))
+    if (const double a = x < y ? /* true */ (y < z ? z : y) : /* false */ (x < z ? z : x))
 
-	    return a * sqrt((x / a) * (x / a) + (y / a) * (y / a) + (z / a) * (z / a));
+        return a * sqrt((x / a) * (x / a) + (y / a) * (y / a) + (z / a) * (z / a));
     else
-	    return (constexpr double){};
+        return (constexpr double){};
 }
