@@ -111,6 +111,12 @@ inline bool isodd(int64_t num)
 // sign function
 bool sign(const int s)[[unsequenced]];
 
+inline double changesign(const double x) [[unsequenced]];
+inline double changesign(const double x) [[unsequenced]]
+{
+    return -x;
+}
+
 // 許容誤差の範囲内か調べる。
 bool accerr(double a, double b, double e);
 
