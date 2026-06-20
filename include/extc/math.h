@@ -60,7 +60,6 @@ int ncomb(unsigned int n, unsigned int r);
 
 // midpoint finction (C Version)
 double midpoint(double a, double b);
-void* pmidpoint(void* a, void* b);
 
 // Numeric radix conversion function
 int radix(int a, int conv);
