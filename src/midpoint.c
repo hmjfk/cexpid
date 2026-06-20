@@ -33,15 +33,16 @@ double midpoint(double a, double b)
     constexpr auto low = DBL_MIN * 2.0;
     constexpr auto high = DBL_MAX * 2.0;
     
+    // typical case: overflow is impossible
     if(fabs(a) <= high && fabs(b) <= high)
-        return (a + b) / 2.0;
+        return (a + b) / 2.0; // always correctly rounded
 
     else if(fabs(a) < low)
-        return a + b / 2.0;
+        return a + b / 2.0;   // not safe to halve a 
 
     else if(fabs(b) < low)
-        return a / 2.0 + b;
+        return a / 2.0 + b;   // not safe to halve b
 
     else
-        return a / 2.0 + b / 2.0;
+        return a / 2.0 + b / 2.0; // otherwise correctly rounded
 }
