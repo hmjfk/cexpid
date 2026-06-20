@@ -15,16 +15,19 @@
 #   along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 CC=gcc
-
+DC=dmd
 CFLAGS=-std=c2y
+DFLAGS=-betterC -preview=dip1021 -w -O -release -inline -boundscheck=off
 INCDIR=-I../include
 OFLAGS=-flto -O2
 WFLAGS=-pedantic-errors -fanalyzer -Werror -Wall -Wextra -Wconversion -Wno-error=sign-conversion -Wformat=2 -Wpacked -Wshadow -Wundef -Wunsafe-loop-optimizations -Wuseless-cast -Wzero-as-null-pointer-constant -Wswitch-default -Wpadded -Wno-error=padded -Wdouble-promotion -Wno-error=cpp -Wno-error=double-promotion -Wswitch-enum -Wno-error=switch-enum -Wjump-misses-init -Wc++-compat -Wstrict-prototypes
 
+DSRC=
+
 all: compile lib
 
 compile:
-	$(CC) -c *.c $(INCDIR) $(CFLAGS) $(WFLAGS) $(OFLAGS)
+	$(CC) -c *.c $(INCDIR) $(CFLAGS) $(WFLAGS) $(OFLAGS) && $(DC) -c $(DSRC) $(DFLAGS)
 
 lib:
 	ar r libcexpid.a *.o
