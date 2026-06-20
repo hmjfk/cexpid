@@ -23,9 +23,9 @@
 // SPDX-License-Identifier: Apache-2.0 WITH LLVM-exception
 //
 //===----------------------------------------------------------------------===//
-/// source https://raw.githubusercontent.com/llvm/llvm-project/refs/heads/main/libcxx/include/cmath
+/// source: https://raw.githubusercontent.com/llvm/llvm-project/refs/heads/main/libcxx/include/cmath
 
-double lerp(const double a, const double b, const double t)[[unsequenced]]
+[[unsequenced]] double lerp(const double a, const double b, const double t)
 {
     if ((a <= 0 && b >= 0) || (a >= 0 && b <= 0))
         return t * b + (1 - t) * a;
