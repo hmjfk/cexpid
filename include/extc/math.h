@@ -46,8 +46,8 @@ int gcd(int a, int b)[[reproducible]];
 int lcm(int a, int b);
 
 // factorial
-intmax_t factorial(intmax_t exponent)[[reproducible]];
-intmax_t factorial2(intmax_t exponent)[[reproducible]];
+uintmax_t factorial(unsigned int exponent)[[reproducible]];
+uintmax_t factorial2(unsigned int exponent)[[reproducible]];
 
 // combination function
 unsigned long comb(const unsigned int n, unsigned int r);
@@ -68,7 +68,7 @@ int radix(int a, int conv);
 double inf(double value);
 
 // lerp function (C++を参考とした。)
-double lerp(double a, double b, float t);
+double lerp(const double a, const double b, const double t)[[unsequenced]];
 
 // sum total function
 /*
