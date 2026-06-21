@@ -25,7 +25,7 @@
 //===----------------------------------------------------------------------===//
 /// source: https://raw.githubusercontent.com/llvm/llvm-project/refs/heads/main/libcxx/include/cmath
 
-double lerp(const double a, const double b, const double t) [[unsequenced]]
+double lerp(double a, double b, double t) [[unsequenced]]
 {
     if ((a <= 0 && b >= 0) || (a >= 0 && b <= 0))
         return t * b + (1 - t) * a;

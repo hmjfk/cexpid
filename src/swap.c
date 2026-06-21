@@ -15,7 +15,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 */
-void swap(int* a, int* b)
+void swap(int* const a, int* const b)
 {
     auto temp = a;
     *a = *b;

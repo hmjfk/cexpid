@@ -82,7 +82,7 @@ int max(int a, int b)[[reproducible]];
 int min(int a, int b) [[reproducible]];
 
 // swap function
-void swap(int* a, int* b);
+void swap(int* const a, int* const b);
 
 // strtoi function
 // strtolの戻り値をint型にした関数

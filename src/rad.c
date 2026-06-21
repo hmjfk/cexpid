@@ -20,7 +20,7 @@
 
 // clang format off
 
-double rad(const uint16_t value)
+double rad(uint16_t value)
 {
     return pi / 180.0 * value;
 }

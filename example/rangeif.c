@@ -23,7 +23,7 @@ int main()
   int b = 0;
 
   scanf("%d", &b);
-  switch (range_if(b, 3, (const int[3]){-3, 6, 8}), more)
+  switch (range_if(b, 3, (constexpr int[3]){-3, 6, 8}), more)
   {
   case 0:
     puts("-5以上");

@@ -29,6 +29,6 @@
 // 比較条件cmpmode指定用。
 enum {less, under, more};
 
-int range_if(const int cmpval,unsigned int qty,const int* condi, const unsigned char cmpmode) [[reproducible]];
+int range_if(int cmpval, unsigned int qty, const int* const condi, unsigned char cmpmode) [[reproducible]];
 
 #endif // end rangeif header

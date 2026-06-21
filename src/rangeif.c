@@ -17,7 +17,7 @@
 */
 #include "rangeif.h"
 
-int range_if(const int cmpval, unsigned int qty, const int* condi, const unsigned char cmpmode) [[reproducible]]
+int range_if(int cmpval, unsigned int qty, const int* const condi, unsigned char cmpmode) [[reproducible]]
 {
     switch (cmpmode)
         {

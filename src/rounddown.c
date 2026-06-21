@@ -17,7 +17,7 @@
 */
 #include<math.h>
 
-double rounddown(const double x, const int digit)
+double rounddown(double x, int digit)
 {
     return trunc(x * pow(10, digit)) / pow(10, digit);
 }

@@ -20,7 +20,7 @@
 
 // clang format off
 
-uint16_t deg(const double value)
+uint16_t deg(double value)
 {
     return (uint16_t)(180.0 / pi * value);
 }

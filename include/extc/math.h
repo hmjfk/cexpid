@@ -24,10 +24,10 @@ constexpr double pi = 3.141592653589793238462643383279502;
 constexpr double e =  2.718281828459045235360287471352662;
 
 // deg -> rad function
-double rad(const uint16_t value);
+double rad(uint16_t value);
 
 // rad -> deg function
-uint16_t deg(const  double value);
+uint16_t deg(double value);
 
 // 角度変換関数
 typedef enum { Deg, Rad, Grd } angle;
@@ -54,13 +54,15 @@ uintmax_t factorial(unsigned int exponent)[[reproducible]];
 uintmax_t factorial2(unsigned int exponent)[[reproducible]];
 
 // combination function
-unsigned long comb(const unsigned int n, unsigned int r);
+unsigned long comb(unsigned int n, unsigned int r);
+
+// repeated combination function
+static inline unsigned long rcomb(unsigned int n, unsigned int r);
+static inline unsigned long rcomb(unsigned int n, unsigned int r)
+{ return comb(n + r - 1u, r); }
 
 // permutation function
 unsigned long perm(unsigned int n, unsigned int r);
-
-// nested combination function
-int ncomb(unsigned int n, unsigned int r);
 
 // midpoint finction (from C++ std::midpoint)
 double midpoint(double a, double b);
@@ -72,7 +74,7 @@ int radix(int a, int conv);
 double inf(double value);
 
 // lerp function (from C++ std::lerp)
-double lerp(const double a, const double b, const double t)[[unsequenced]];
+double lerp(double a, double b, double t)[[unsequenced]];
 
 // sum total function
 /*
@@ -106,11 +108,9 @@ inline bool isodd(int64_t num)
 // sign function
 bool sign(const int s)[[unsequenced]];
 
-inline double changesign(const double x) [[unsequenced]];
-inline double changesign(const double x) [[unsequenced]]
-{
-    return -x;
-}
+static inline double changesign(double x) [[unsequenced]];
+static inline double changesign(double x) [[unsequenced]]
+{ return -x; }
 
 // 許容誤差の範囲内か調べる。
 bool accerr(double a, double b, double e);
