@@ -24,10 +24,10 @@ constexpr double pi = 3.141592653589793238462643383279502;
 constexpr double e =  2.718281828459045235360287471352662;
 
 // deg -> rad function
-double rad(double value);
+double rad(const uint16_t value);
 
 // rad -> deg function
-double deg(double value);
+uint16_t deg(const  double value);
 
 // 角度変換関数
 typedef enum { Deg, Rad, Grd } angle;
@@ -87,15 +87,6 @@ int sum(int a,int b, typeof(int (int))* gt);
 */
 int product(int a,int b, typeof(int (int))* gt);
 
-/*
-算術的に高次方程式を解く関数
-*/
-// 戻り値の型
-struct return_result
-{
-    double _Complex* x; //解の配列先頭
-    uint8_t res_num;    //解の数（解の配列要素数）
-};
 // その数が素数かどうか調べる
 bool isprime(uint64_t a);
 
