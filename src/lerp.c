@@ -33,7 +33,7 @@ double lerp(double a, double b, double t) [[unsequenced]]
     if (t == 1)
         return b;
 
-    auto x = a + t * (b - a);
+    auto const x = a + t * (b - a);
     if ((t > 1) == (b > a))
         return b < x ? x : b;
     else
