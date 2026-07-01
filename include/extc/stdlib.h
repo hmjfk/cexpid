@@ -85,4 +85,11 @@ void swap(int* const a, int* const b);
 // strtoi function
 // strtolの戻り値をint型にした関数
 int strtoi(const char * restrict nptr, char ** restrict endptr, int base);
+
+/*
+function poiner encrypt/decrypt function
+See below: https://www.open-std.org/JTC1/SC22/WG14/www/docs/n1332.pdf
+*/
+void* encfptr(void* fptr); // from encode_pointer
+void* decfptr(void* fptr); // from decode_pointer
 #endif // end EXTSTDLIB_H
