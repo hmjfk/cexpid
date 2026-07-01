@@ -93,8 +93,8 @@ inline uint8_t flag_set(uint8_t a, uint8_t b) [[unsequenced]]
 <stdbit.h>の範囲拡張
 
 これらは、<stdbit.h>の関数群を拡張し、bit範囲を指定して操作できるようにしたものである。
-ただし、<stdbit.h>の範囲版として本headerで提供する関数は、関数名の接尾辞stdc_を外し、_rangeという接尾辞がついたものである。
-この際、既存の引数の後ろに`uint8_t lower_bit, uint8_t upper_bit`が追加される。
+ただし、<stdbit.h>の範囲版として本headerで提供する関数は、関数名の接尾辞stdc_を外し、_rという接尾辞がついたものである。
+この際、既存の引数の後ろに`uint8_t lbit, uint8_t ubit`が追加される。
 
 - stdc_leading_zeros
 - stdc_leading_ones
@@ -112,30 +112,30 @@ inline uint8_t flag_set(uint8_t a, uint8_t b) [[unsequenced]]
 - stdc_rotate_right
 */
 
-uint8_t leading_zeros_range(uint8_t value, uint8_t lower_bit, uint8_t upper_bit) [[unsequenced]];
-uint8_t leading_ones_range(uint8_t value, uint8_t lower_bit, uint8_t upper_bit) [[unsequenced]];
-uint8_t trailing_zeros_range(uint8_t value, uint8_t lower_bit, uint8_t upper_bit) [[unsequenced]];
-uint8_t trailing_ones_range(uint8_t value, uint8_t lower_bit, uint8_t upper_bit) [[unsequenced]];
-uint8_t first_leading_zero_range(uint8_t value, uint8_t lower_bit, uint8_t upper_bit) [[unsequenced]];
-uint8_t first_leading_one_range(uint8_t value, uint8_t lower_bit, uint8_t upper_bit) [[unsequenced]];
-uint8_t first_trailing_zero_range(uint8_t value, uint8_t lower_bit, uint8_t upper_bit) [[unsequenced]];
-uint8_t count_zeros_range(uint8_t value, uint8_t lower_bit, uint8_t upper_bit) [[unsequenced]];
-uint8_t count_ones_range(uint8_t value, uint8_t lower_bit, uint8_t upper_bit) [[unsequenced]];
-uint8_t has_single_bit_range(uint8_t value, uint8_t lower_bit, uint8_t upper_bit) [[unsequenced]];
-uint8_t bit_floor_range(uint8_t value, uint8_t lower_bit, uint8_t upper_bit) [[unsequenced]];
-uint8_t bit_ceil_range(uint8_t value, uint8_t lower_bit, uint8_t upper_bit) [[unsequenced]];
-uint8_t rotate_left_range(uint8_t value, uint8_t count, uint8_t lower_bit, uint8_t upper_bit);
-uint8_t rotate_right_range(uint8_t value, uint8_t count, uint8_t lower_bit, uint8_t upper_bit);
+uint8_t leading_zeros_r(uint8_t value, uint8_t lbit, uint8_t ubit) [[unsequenced]];
+uint8_t leading_ones_r(uint8_t value, uint8_t lbit, uint8_t ubit) [[unsequenced]];
+uint8_t trailing_zeros_r(uint8_t value, uint8_t lbit, uint8_t ubit) [[unsequenced]];
+uint8_t trailing_ones_r(uint8_t value, uint8_t lbit, uint8_t ubit) [[unsequenced]];
+uint8_t first_leading_zero_r(uint8_t value, uint8_t lbit, uint8_t ubit) [[unsequenced]];
+uint8_t first_leading_one_r(uint8_t value, uint8_t lbit, uint8_t ubit) [[unsequenced]];
+uint8_t first_trailing_zero_r(uint8_t value, uint8_t lbit, uint8_t ubit) [[unsequenced]];
+uint8_t count_zeros_r(uint8_t value, uint8_t lbit, uint8_t ubit) [[unsequenced]];
+uint8_t count_ones_r(uint8_t value, uint8_t lbit, uint8_t ubit) [[unsequenced]];
+uint8_t has_single_bit_r(uint8_t value, uint8_t lbit, uint8_t ubit) [[unsequenced]];
+uint8_t bit_floor_r(uint8_t value, uint8_t lbit, uint8_t ubit) [[unsequenced]];
+uint8_t bit_ceil_r(uint8_t value, uint8_t lbit, uint8_t ubit) [[unsequenced]];
+uint8_t rotate_left_r(uint8_t value, uint8_t count, uint8_t lbit, uint8_t ubit);
+uint8_t rotate_right_r(uint8_t value, uint8_t count, uint8_t lbit, uint8_t ubit);
 
 
 /**
  @brief 範囲内のbit列を切り出す。
  @param value 対象bit列
- @param lower_bit 切り出し範囲の下限bit
- @param upper_bit 切り出し範囲の上限bit
+ @param lbit 切り出し範囲の下限bit
+ @param ubit 切り出し範囲の上限bit
  @return 切り出し後のbit列
  */
-uint8_t clipping_bits(uint8_t value, uint8_t lower_bit, uint8_t upper_bit) [[unsequenced]];
+uint8_t clipping_bits(uint8_t value, uint8_t lbit, uint8_t ubit) [[unsequenced]];
 
 /**
  @brief bit列の途中に割り込んで挿入する。
@@ -150,12 +150,12 @@ uint8_t insert_bits(uint8_t value, uint8_t insert_v, uint8_t count) [[unsequence
  @brief bit列を範囲内で上書きする。flagsの桁数と上書き範囲が異なる場合、上書き範囲が優先される。
  @param value 対象bit列。
  @param flags 上書き元bit
- @param lower_bit  上書き開始bit
- @param upper_bit  上書き終了bit
+ @param lbit  上書き開始bit
+ @param ubit  上書き終了bit
  @param flag flagの種類
  @return 上書き後のbit列
  */
-uint8_t overwrite_bits(uint8_t value, uint8_t flags, uint8_t lower_bit, uint8_t upper_bit) [[unsequenced]];
+uint8_t overwrite_bits(uint8_t value, uint8_t flags, uint8_t lbit, uint8_t ubit) [[unsequenced]];
 
 // bitmask作成
 /**
